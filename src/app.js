@@ -74,7 +74,8 @@ class App extends PureComponent {
           })
           .catch(error => {
             this.setState({
-              isFetching: false
+              isFetching: false,
+              error
             })
           })
       }

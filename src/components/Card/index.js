@@ -1,5 +1,6 @@
 import React from 'react'
 import cart from 'components/ShoppingCart/shopping-cart.svg'
+import PropTypes from 'prop-types'
 
 const SingleCard = ({ avatar, name, price, shoppingHandler }) => (
   <div className='card -item'>
@@ -13,11 +14,18 @@ const SingleCard = ({ avatar, name, price, shoppingHandler }) => (
       </div>
       <div className='bottom'>
         <button className='btn' onClick={shoppingHandler(avatar, name, price)}>
-          <img width='20px' height='20px' src={cart} alt='cart image' />
+          <img src={cart} alt='cart image' />
         </button>
       </div>
     </div>
   </div>
 )
+
+SingleCard.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  shoppingHandler: PropTypes.func.isRequired
+}
 
 export default SingleCard

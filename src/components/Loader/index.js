@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../../css/loader.sass'
+import './loader.sass'
 
 const Loader = () => (
   <div className='sk-circle'>

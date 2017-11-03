@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './checkout.sass'
 
@@ -27,7 +28,7 @@ const Checkout = ({ status = 'off', handleClick, cart, handleCheckout }) => {
                   {cart.map((member, index) => (
                     <tr key={index}>
                       <td>
-                        <img width='50px' src={member.avatar} />
+                        <img src={member.avatar} />
                       </td>
                       <td>{member.login}</td>
                       <td>{member.followers}</td>
@@ -50,6 +51,13 @@ const Checkout = ({ status = 'off', handleClick, cart, handleCheckout }) => {
       </section>
     </div>
   )
+}
+
+Checkout.propTypes = {
+  status: PropTypes.string,
+  handleClick: PropTypes.func.isRequired,
+  cart: PropTypes.array.isRequired,
+  handleCheckout: PropTypes.func.isRequired
 }
 
 export default Checkout

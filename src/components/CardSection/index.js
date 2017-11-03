@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from 'components/Card'
 import Loader from 'components/Loader'
+import PropTypes from 'prop-types'
 
 const CardSection = ({ isFetching, members, shoppingHandler }) => {
   if (isFetching) return <Loader />
@@ -14,12 +15,17 @@ const CardSection = ({ isFetching, members, shoppingHandler }) => {
           key={index}
           avatar={member.avatar}
           name={member.login}
-          price={member.followers}
+          price={parseInt(member.followers)}
           shoppingHandler={shoppingHandler}
         />
       ))}
     </div>
   )
+}
+
+CardSection.propTypes = {
+  isFetching: PropTypes.bool.isRequired,
+  shoppingHandler: PropTypes.func.isRequired
 }
 
 export default CardSection
