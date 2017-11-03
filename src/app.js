@@ -28,6 +28,9 @@ class App extends PureComponent {
 
     this.handleStatusCheckout = status => () => {
       this.setState({ checkoutStatus: status })
+      status === 'on'
+        ? document.body.style.overflowY = 'hidden'
+        : document.body.style.overflowY = 'auto'
     }
 
     this.shoppingHandler = (avatar, login, followers) => () => {
